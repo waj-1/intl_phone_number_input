@@ -104,8 +104,7 @@ class PhoneNumber extends Equatable {
 
   /// For predefined phone number returns Country's [isoCode] from the dial code,
   /// Returns null if not found.
-  static String? getISO2CodeByPrefix(String prefix,
-      {List<Map<String, dynamic>> countriesList}) {
+  static String? getISO2CodeByPrefix(String prefix) {
     if (prefix.isNotEmpty) {
       prefix = prefix.startsWith('+') ? prefix : '+$prefix';
       var country = Countries.countryList
