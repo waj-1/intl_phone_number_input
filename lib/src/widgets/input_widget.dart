@@ -85,6 +85,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
   final Iterable<String>? autofillHints;
 
   final List<String>? countries;
+  final List<Map<String, dynamic>>? customCountriesList;
 
   InternationalPhoneNumberInput(
       {Key? key,
@@ -124,8 +125,13 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.focusNode,
       this.cursorColor,
       this.autofillHints,
-      this.countries})
-      : super(key: key);
+      this.countries,
+      this.customCountriesList})
+      : super(key: key) {
+    if (customCountriesList != null) {
+      Countries.customCountryList = customCountriesList!;
+    }
+  }
 
   @override
   State<StatefulWidget> createState() => _InputWidgetState();

@@ -40,9 +40,10 @@ class Countries {
   ///     }
   ///   ```
   ///
-  static List<Map<String, dynamic>> get countryList => _countryList;
+  static List<Map<String, dynamic>> get countryList =>
+      customCountryList.isNotEmpty ? customCountryList : defaultCountryList;
 
-  static List<Map<String, dynamic>> _countryList = [
+  static List<Map<String, dynamic>> defaultCountryList = [
     {
       "num_code": "4",
       "alpha_2_code": "AF",
@@ -7879,4 +7880,6 @@ class Countries {
       }
     }
   ];
+
+  static List<Map<String, dynamic>> customCountryList = [];
 }
